@@ -28,8 +28,9 @@ body {
 
 .wrap {
   padding: 0 20px;
-  max-width: 1120px;
+  max-width: 1360px;
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media (min-width: $tablet) {
     padding: 0 40px;
@@ -39,6 +40,6 @@ body {
     padding: 0 80px;
   }
   @media (min-width: $desktop-l) {
-    padding: 0 120px;
+    padding: 0 140px;
   }
 }

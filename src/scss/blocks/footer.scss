@@ -81,43 +81,18 @@
     }
 
     &__name {
-      font-size: $font-size-22;
-      line-height: $line-height-28;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
       color: $color-white;
-      font-weight: 700;
-      margin-bottom: 14px;
-
-      @media (min-width: $desktop) {
-        font-size: $font-size-16;
-        line-height: $line-height-22;
-        margin-bottom: 20px;
-      }
-
-      @media (min-width: $desktop-l) {
-        font-size: $font-size-22;
-        line-height: $line-height-28;
-        margin-bottom: 24px;
-
-        &_mb {
-          margin-bottom: 28px;
-        }
-      }
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
     &__body {
       margin: 0;
-      font-size: $font-size-16;
+      font-size: $font-size-15;
       line-height: $line-height-20;
-
-      @media (min-width: $desktop) {
-        font-size: $font-size-13;
-        line-height: $line-height-18;
-      }
-
-      @media (min-width: $desktop-l) {
-        font-size: $font-size-17;
-        line-height: $line-height-24;
-      }
+      font-weight: 400;
     }
 
     &__list {

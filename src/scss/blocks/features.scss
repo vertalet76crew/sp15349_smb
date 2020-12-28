@@ -19,45 +19,42 @@
   &__list {
     @media (min-width: $desktop) {
       display: flex;
-      justify-content: space-between;
       padding-bottom: 80px;
-      @media (min-width: $desktop-l) {
-        margin-right: -70px;
-      }
 
       &:last-child {
         padding-bottom: 0;
       }
     }
-
-    &_last {
-      @media (min-width: $desktop) {
-        max-width: calc(64% - 4px);
-      }
-      @media (min-width: $desktop-l) {
-        max-width: calc(69% - 2px);
-      }
-    }
   }
 
   &__item {
+    max-width: 320px;
     text-align: center;
     margin: 0 auto 62px;
-    max-width: 335px;
 
     @media (min-width: $tablet) {
-      max-width: 500px;
       margin-bottom: 54px;
     }
 
     @media (min-width: $desktop) {
-      max-width: 262px;
+      width: calc(33.3333% - 50px);
+      max-width: inherit;
       text-align: left;
       margin: 0;
+      margin-right: 46px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     @media (min-width: $desktop-l) {
-      max-width: 350px;
+      width: 310px;
+      margin-right: 76px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -65,139 +62,215 @@
     margin-top: 0;
     margin-bottom: 18px;
     font-size: $font-size-20;
-    line-height: $line-height-30;
-    font-weight: 700;
+    line-height: $line-height-26;
+    font-weight: 500;
     color: $color-black;
 
     &_short {
       @media (min-width: $desktop) {
         max-width: 200px;
       }
-
-      @media (min-width: $desktop-l) {
-        max-width: 280px;
-      }
     }
 
     @media (min-width: $tablet) {
-      font-weight: 500;
+      font-size: $font-size-17;
+      line-height: $line-height-24;
       margin-bottom: 10px;
     }
 
     @media (min-width: $desktop) {
-      font-weight: 600;
+      font-size: $font-size-20;
+      line-height: $line-height-26;
       margin-bottom: 14px;
     }
 
     @media (min-width: $desktop-l) {
-      font-weight: 700;
       margin-bottom: 18px;
-      font-size: $font-size-28;
-      line-height: $line-height-34;
     }
   }
 
   &__icon {
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 auto 20px;
-    margin-bottom: 8px;
-    transform: translateX(10px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    min-height: 60px;
 
     @media (min-width: $desktop) {
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 18px;
-      transform: translateX(0);
+      margin: 0;
+      margin-bottom: 12px;
     }
-
     @media (min-width: $desktop-l) {
-      height: 80px;
-      width: 80px;
+      margin-bottom: 13px;
+      min-height: 72px;
     }
 
-    &_left {
-      transform: translateX(0);
+    &_1 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-1.svg");
+        width: 60px;
+        height: 60px;
+      }
       @media (min-width: $desktop) {
+        transform: translateX(-11px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-15px);
+      }
+    }
+
+    &_2 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-2.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-11px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-14px);
+      }
+    }
+
+    &_3 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-3.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-6px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-8px);
+      }
+    }
+
+    &_4 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-4.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-9px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-11px);
+      }
+    }
+
+    &_5 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-5.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-8px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
         transform: translateX(-9px);
       }
     }
 
-    &_right {
-      transform: translateX(10px);
+    &_6 {
+      width: 60px;
+      height: 60px;
 
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-6.svg");
+        width: 60px;
+        height: 60px;
+      }
       @media (min-width: $desktop) {
-        transform: translateX(0);
+        transform: translateX(-7px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-9px);
       }
     }
-  }
 
-  &__img_1 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 42px;
-      height: 44px;
+    &_7 {
+      width: 60px;
+      height: 60px;
+
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-7.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-9px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-12px);
+      }
     }
-  }
 
-  &__img_2 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 64px;
-      height: 64px;
-    }
-  }
+    &_8 {
+      width: 60px;
+      height: 60px;
 
-  &__img_3 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 46px;
-      height: 44px;
-    }
-  }
-
-  &__img_4 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 50px;
-      height: 46px;
-    }
-  }
-
-  &__img_5 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 46px;
-      height: 54px;
-    }
-  }
-
-  &__img_6 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 53px;
-      height: 44px;
-    }
-  }
-
-  &__img_7 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 44px;
-      height: 44px;
-    }
-  }
-
-  &__img_8 {
-    @media (min-width: $mobile-s) and (max-width: 1359px) {
-      width: 55px;
-      height: 44px;
+      @media (min-width: $tablet) {
+        background-image: url($img + "/icon-8.svg");
+        width: 60px;
+        height: 60px;
+      }
+      @media (min-width: $desktop) {
+        transform: translateX(-8px);
+      }
+      @media (min-width: $desktop-l) {
+        width: 80px;
+        height: 80px;
+        transform: translateX(-11px);
+      }
     }
   }
 
   &__text {
     margin: 0;
+    font-weight: 400;
     font-size: $font-size-15;
     line-height: $line-height-24;
+    @media (min-width: $desktop) {
+      font-size: $font-size-14;
+      line-height: $line-height-22;
+    }
     @media (min-width: $desktop-l) {
-      font-size: $font-size-20;
-      line-height: $line-height-32;
+      font-size: $font-size-17;
+      line-height: $line-height-28;
     }
   }
 }

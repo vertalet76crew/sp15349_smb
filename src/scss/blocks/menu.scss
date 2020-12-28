@@ -50,7 +50,7 @@
     }
 
     .menu__door {
-      background-image: url($img + "/close-white.svg");
+      background-image: url($img + "/close.svg");
     }
   }
 
@@ -136,7 +136,6 @@
     fill: currentColor;
     width: 24px;
     height: 24px;
-    z-index: -1;
 
     @media (min-width: $tablet) {
       right: 40px;
@@ -160,6 +159,7 @@
     padding: 0;
     list-style: none;
     // list-style-image: url('data:0');
+
 
     @media (min-width: $desktop) {
       position: absolute;
@@ -213,10 +213,23 @@
     list-style: none;
 
     &:hover {
+      .menu__level2 {
+        display: block;
+        list-style: none;
+        list-style-image: none;
+        list-style-type: none;
+        overflow: hidden;
+      }
+
       .menu__link {
         color: $color-menu-link-active;
       }
+
+      .menu__arrow {
+        transform: translateY(-50%) scale(1, -1);
+      }
     }
+
 
     @media (min-height: $mobile-height) {
       margin: 0 0 10px;
@@ -252,13 +265,13 @@
           color: $color-menu-link-active;
         }
 
-        // .menu__arrow {
-        //   transform: translateY(-50%) scale(1, -1);
-        // }
+        .menu__arrow {
+          transform: translateY(-50%) scale(1, -1);
+        }
 
-        // .menu__level2 {
-        //   display: block;
-        // }
+        .menu__level2 {
+          display: block;
+        }
       }
     }
   }

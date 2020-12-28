@@ -3,7 +3,9 @@
   @import '../main/variables.fonts';
   @import '../main/variables.colors';
 
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Mail_Sans_Roman', sans-serif;
   color: $color-white;
   font-size: $font-size-15;
@@ -18,14 +20,13 @@
   box-sizing: border-box;
   border-radius: 8px;
   cursor: pointer;
-  height: 48px;
+  height: 44px;
 
   @media (min-width: $desktop-l) {
-    font-size: $font-size-20;
-    font-weight: 600;
+    font-size: $font-size-17;
     padding: 0 40px;
     border-radius: 12px;
-    height: 60px;
+    height: 56px;
   }
 
   &_type1 {

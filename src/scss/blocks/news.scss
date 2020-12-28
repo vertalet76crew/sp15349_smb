@@ -4,6 +4,7 @@
   @import '../main/variables.colors';
 
   padding-bottom: 34px;
+  // max-width: 1140px;
   margin: 0 auto;
   @media (min-width: $tablet) {
     padding-bottom: 46px;
@@ -37,7 +38,7 @@
     }
 
     &_first {
-      padding-left: 20px;
+      padding-left: 10px;
 
       @media (min-width: $tablet) {
         padding-left: 40px;

@@ -1,0 +1,224 @@
+.subscription {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+  @import '../main/mixin';
+  padding-bottom: 60px;
+  color: $color-black;
+
+  @media (min-width: $tablet) {
+    padding-bottom: 74px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: $desktop-l) {
+    padding-bottom: 118px;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-20;
+    line-height: $line-height-26;
+    color: $color-black;
+    max-width: 340px;
+    margin-top: 0;
+    margin-bottom: 22px;
+    width: 100%;
+    font-weight: 500;
+    @media (min-width: $tablet) {
+      margin-bottom: 16px;
+      max-width: 372px;
+      font-size: $font-size-26;
+      line-height: $line-height-32;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 20px;
+      max-width: 446px;
+      font-size: $font-size-20;
+      line-height: $line-height-26;
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-26;
+      line-height: $line-height-32;
+      max-width: 508px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__box {
+    @media (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    max-width: 324px;
+    font-size: $font-size-15;
+    line-height: $line-height-24;
+    margin-bottom: 24px;
+    color: $color-subscription-text;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 26px;
+      margin-left: 24px;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: $font-size-14;
+      line-height: $line-height-22;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-17;
+      line-height: $line-height-28;
+      margin-left: 32px;
+    }
+  }
+
+  &__form {
+    position: relative;
+
+    @media (min-width: $tablet) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 536px;
+    }
+
+    @media (min-width: $desktop) {
+      max-width: 610px;
+    }
+    @media (min-width: $desktop-l) {
+      max-width: 724px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      margin-left: 24px;
+      max-width: 140px;
+    }
+
+    @media (min-width: $desktop-l) {
+      margin-left: 32px;
+      border-radius: 12px;
+      max-width: 184px;
+    }
+  }
+
+  &__filedbox {
+    margin-bottom: 16px;
+
+    @media (min-width: $tablet) {
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__filed {
+    width: 100%;
+    font-size: $font-size-15;
+    line-height: $line-height-20;
+    padding: 11px 20px;
+    color: $color-black;
+    outline: none;
+    border: 1px solid $color-filed-border;
+    background: $color-white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    appearance: none;
+    font-weight: 400;
+
+    @media (min-width: $tablet) {
+      font-size: $font-size-16;
+      border-radius: 8px;
+    }
+    @media (min-width: $desktop-l) {
+      padding: 17px 20px;
+      font-size: $font-size-17;
+      line-height: $line-height-20;
+      border-radius: 12px;
+    }
+
+    @include placeholder($color-date);
+
+    &:focus {
+      @include placeholder(transparent);
+    }
+
+    &_error {
+      color: $color-error;
+      border-color: $color-filed-border-error;
+    }
+  }
+
+  &__message {
+    position: relative;
+    margin-top: 5px;
+    font-size: $font-size-18;
+    line-height: $line-height-20;
+    color: $color-black;
+    padding: 7px 14px 7px 34px;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 8px 50%;
+
+    @media (min-width: $tablet) {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      margin-top: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: -12px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 7px 12px;
+      border-color: transparent;
+    }
+
+    @media (min-width: $desktop) and (max-width: ($desktop-l - 1)) {
+      top: 53px;
+    }
+
+    &_error {
+      background-color: $color-subscription-error;
+      background-image: url($img + "/ic-error.svg");
+
+      &:before {
+        border-bottom-color: $color-subscription-error;
+      }
+    }
+
+    &_success {
+      background-color: $color-subscription-success;
+      background-image: url($img + "/ic-success.svg");
+
+      &:before {
+        border-bottom-color: $color-subscription-success;
+      }
+    }
+  }
+}
