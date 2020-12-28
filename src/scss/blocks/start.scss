@@ -1,0 +1,112 @@
+.start {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+
+  color: $color-light;
+  background: $color-dark;
+  padding-top: 114px;
+  padding-bottom: 70px;
+
+  @media (min-width: $mobile-s) {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  @media (min-width: $tablet) {
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 123px;
+    padding-bottom: 120px;
+  }
+
+  @media (min-width: $desktop-l) {
+    padding-top: 164px;
+    padding-bottom: 136px;
+  }
+
+  &__title {
+    font-size: $font-size-36;
+    line-height: $line-height-44;
+    font-weight: 700;
+    color: $color-white;
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-60;
+      line-height: $line-height-68;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__content {
+    max-width: 500px;
+    font-size: $font-size-15;
+    line-height: $line-height-24;
+    text-align: center;
+    margin: 0 auto;
+
+    @media (min-width: $desktop) {
+      position: relative;
+      text-align: left;
+      margin: 0;
+    }
+
+    @media (min-width: $desktop-l) {
+      width: 100%;
+      max-width: 840px;
+      font-size: $font-size-20;
+      line-height: $line-height-32;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    margin: 0;
+    font-size: $font-size-15;
+    line-height: $line-height-24;
+    @media (min-width: $desktop) {
+      max-width: 430px;
+    }
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-24;
+      line-height: $line-height-36;
+      max-width: 700px;
+    }
+  }
+
+  &__button {
+    margin-top: 36px;
+
+    @media (min-width: $desktop) {
+      margin-top: 34px;
+    }
+
+    @media (min-width: $desktop-l) {
+      margin-top: 46px;
+    }
+  }
+
+  &__buttonlink {
+    @media (max-width: ($desktop - 1)) {
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+}

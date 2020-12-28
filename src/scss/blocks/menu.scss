@@ -1,0 +1,325 @@
+.menu {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+
+  font-size: 0;
+  line-height: 0;
+
+  @media (min-width: $desktop) {
+    margin-right: -20px;
+  }
+
+  &__door {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: url($img + "/menu.svg") no-repeat 50% 50%;
+    border: 0 none;
+    outline: none;
+    z-index: 101;
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__frame {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $color-dark;
+    z-index: 100;
+
+    @media (min-width: $desktop) {
+      display: block;
+      position: static;
+      background: none;
+    }
+  }
+
+  &_open {
+    .menu__frame {
+      @media (max-width: ($desktop - 1)) {
+        display: block;
+      }
+    }
+
+    .menu__door {
+      background-image: url($img + "/close-white.svg");
+    }
+  }
+
+  &__left-item {
+    display: flex;
+    align-items: center;
+    @media (min-width: $desktop-l) {
+      padding-right: 217px;
+    }
+    @media (min-width: $desktop) {
+      padding-right: 92px;
+    }
+  }
+
+  &__right-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    bottom: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @media (min-height: $mobile-height) {
+      top: 150px;
+    }
+
+    @media (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+      position: static;
+      padding: 0;
+      overflow: visible;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    padding: 0 20px;
+    padding-bottom: 14px;
+
+    @media (min-width: $tablet) {
+      padding: 0 40px;
+    }
+
+    @media (min-width: $desktop) {
+      padding: 0;
+    }
+
+    &_ischild {
+      position: relative;
+      padding-right: 63px;
+
+      @media (min-width: $tablet) {
+        padding-right: 83px;
+      }
+
+      @media (min-width: $desktop) {
+        padding-right: 13px;
+      }
+
+      @media (min-width: $desktop-l) {
+        padding-right: 18px;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    z-index: -1;
+
+    @media (min-width: $tablet) {
+      right: 40px;
+    }
+
+    @media (min-width: $desktop) {
+      right: 0;
+      width: 12px;
+      height: 12px;
+    }
+
+    @media (min-width: $desktop-l) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__level2 {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    // list-style-image: url('data:0');
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: 230px;
+      background: $color-menu;
+      border-radius: 12px;
+
+      .menu__level2item {
+        &:hover {
+          color: $color-white;
+          background: rgba(14, 67, 255, 0.26);
+        }
+      }
+    }
+
+    @media (min-width: $desktop-l) {
+      top: 34px;
+    }
+  }
+
+  &__item {
+    &_open {
+      @media (max-width: ($desktop - 1)) {
+        margin-bottom: 4px;
+      }
+
+      .menu__link {
+        @media (min-width: $desktop) {
+          color: $color-menu-link-active;
+        }
+      }
+
+      .menu__arrow {
+        transform: translateY(-50%) scale(1, -1);
+      }
+
+      .menu__level2 {
+        display: block;
+      }
+    }
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-22;
+    line-height: $line-height-60;
+    font-weight: 500;
+    color: $color-white;
+    cursor: pointer;
+    list-style: none;
+
+    &:hover {
+      .menu__link {
+        color: $color-menu-link-active;
+      }
+    }
+
+    @media (min-height: $mobile-height) {
+      margin: 0 0 10px;
+      line-height: $line-height-70;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: $font-size-13;
+      line-height: $line-height-17;
+      margin: 0 28px 0 0;
+      padding-bottom: 12px;
+      transform: translateY(6px);
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-18;
+      line-height: $line-height-23;
+      margin-right: 38px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      .menu__level2 {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    @media (min-width: $desktop) and (hover: hover) and (pointer: fine) {
+      &:hover {
+        .menu__link {
+          color: $color-menu-link-active;
+        }
+
+        // .menu__arrow {
+        //   transform: translateY(-50%) scale(1, -1);
+        // }
+
+        // .menu__level2 {
+        //   display: block;
+        // }
+      }
+    }
+  }
+
+  &__level2item {
+    padding: 0 20px 12px;
+    font-size: $font-size-16;
+    line-height: $line-height-22;
+    font-weight: 400;
+    color: $color-light;
+
+    &:first-child {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    @media (min-width: $tablet) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (min-width: $desktop) {
+      padding: 13px 22px;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
+      font-weight: 500;
+    }
+
+    @media (min-width: $desktop) and (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $color-white;
+        background: rgba(14, 67, 255, 0.26);
+      }
+    }
+  }
+
+  &__level2link {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  &__social {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+
+    @media (min-width: $tablet) {
+      left: 40px;
+    }
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+
+    .social__item_title {
+      display: none;
+    }
+  }
+}

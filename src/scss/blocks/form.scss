@@ -1,0 +1,50 @@
+.form {
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+  @import '../main/mixin';
+
+  margin: 0;
+  padding: 0;
+
+  &__row {
+    margin-bottom: 20px;
+  }
+
+  &__field {
+    width: 100%;
+    font-family: 'Mail_Sans_Roman', sans-serif;
+    font-size: $font-size-16;
+    line-height: normal;
+    padding: 15px 14px;
+    color: $color-filed;
+    outline: none;
+    border: 1px solid $color-gray;
+    background: $color-gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    appearance: none;
+
+    @include placeholder($color-placeholder);
+
+    &:focus {
+      @include placeholder(transparent);
+    }
+
+    &_error {
+      border-color: $color-filed-border-error;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  &__error {
+    padding-top: 10px;
+    margin-bottom: -6px;
+    font-size: $font-size-14;
+    line-height: $line-height-20;
+    color: $color-error;
+  }
+}

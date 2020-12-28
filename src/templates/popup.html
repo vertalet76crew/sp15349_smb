@@ -1,0 +1,30 @@
+<div class="popup" data-block="popup">
+  <div class="popup__body">
+    <div class="popup__dialog">
+      <div class="popup__content">
+          <button type="button" class="popup__close" data-target="close">Закрыть</button>
+          <div class="popup__form">
+            <form class="form" data-form="request">
+              <div class="form__row">
+                <input type="text" name="fio" placeholder="Имя и фамилия" value="" class="form__field" data-required />
+                <div class="form__error" hidden data-error></div>
+              </div>
+              <div class="form__row">
+                <input type="text" name="email" placeholder="Email" value="" class="form__field"  data-required />
+                <div class="form__error" hidden data-error></div>
+              </div>
+              <div class="form__row">
+                <input type="text" name="phone" placeholder="+7(___) ___-__-__" value="" class="form__field" data-required />
+                <div class="form__error" hidden data-error></div>
+              </div>
+              <button type="submit" class="button button_type1 form__button">Отправить</button>
+            </form>
+          </div>
+          <div class="popup__send" data-block="formSend">
+            <h2 class="popup__sendtitle">Спасибо!</h2>
+            <p class="popup__sendtext">Ваша заявка принята. Мы свяжемся с вами в ближайшее время.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

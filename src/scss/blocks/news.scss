@@ -1,0 +1,180 @@
+.news {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+
+  padding-bottom: 34px;
+  margin: 0 auto;
+  @media (min-width: $tablet) {
+    padding-bottom: 46px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-l) {
+    padding-bottom: 47px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    min-width: 310px;
+    width: 310px;
+    padding: 0 20px 0 0;
+
+    @media (min-width: $tablet) {
+      min-width: 261px;
+      width: 261px;
+    }
+
+    @media (min-width: $desktop-l) {
+      min-width: 348px;
+      width: 348px;
+    }
+
+    &_first {
+      padding-left: 20px;
+
+      @media (min-width: $tablet) {
+        padding-left: 40px;
+      }
+
+      @media (min-width: $desktop-l) {
+        padding-left: 60px;
+      }
+    }
+
+    &_last {
+      padding-right: 10px;
+      padding-right: 0;
+
+      @media (min-width: $tablet) {
+        padding-right: 40px;
+      }
+
+      @media (min-width: $desktop-l) {
+        padding-right: 60px;
+      }
+    }
+  }
+
+  &__block {
+    display: block;
+    text-decoration: none;
+    background: $color-white;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    cursor: pointer;
+
+    @media (min-width: $desktop) and (max-width: ($desktop-l - 1)) {
+      border-radius: 18px;
+    }
+  }
+
+  &__text {
+    display: block;
+    padding: 28px 26px;
+
+    @media (min-width: $tablet) {
+      padding: 21px 24px;
+    }
+
+    @media (min-width: $desktop-l) {
+      padding: 28px 32px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-size: $font-size-20;
+    line-height: $line-height-26;
+    font-weight: 700;
+    color: $color-black;
+    height: 82px;
+    overflow: hidden;
+    margin-bottom: 23px;
+
+    @media (min-width: $tablet) {
+      font-size: $font-size-17;
+      line-height: $line-height-21;
+      height: 63px;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-22;
+      line-height: $line-height-28;
+      height: 84px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date {
+    display: block;
+    font-size: $font-size-13;
+    line-height: $line-height-17;
+    color: $color-date;
+
+    @media (min-width: $tablet) {
+      font-size: $font-size-11;
+      line-height: $line-height-13;
+    }
+
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-14;
+      line-height: $line-height-17;
+    }
+  }
+
+  &__imgbox {
+    display: block;
+    position: relative;
+    height: 160px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    overflow: hidden;
+
+    @media (min-width: $tablet) and (max-width: ($desktop-l - 1)) {
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      height: 120px;
+    }
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
+    @media (min-width: $desktop) and (max-width: ($desktop-l - 1)) {
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+    }
+  }
+
+  .owl-stage-outer {
+    padding-bottom: 0;
+
+    .owl-stage {
+      padding-bottom: 20px;
+    }
+
+    @media (min-width: $mobile) {
+      padding-left: 10px;
+    }
+
+    @media (min-width: $tablet) {
+      padding: 0 0 20px;
+    }
+  }
+}

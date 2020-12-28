@@ -1,0 +1,29 @@
+@import 'variables';
+
+@font-face {
+  font-family: 'Mail_Sans_Roman';
+  src: url($fonts + '/Mail_Sans_Roman_Regular.woff') format('woff'), url($fonts + '/Mail_Sans_Roman_Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mail_Sans_Roman';
+  src: url($fonts + '/Mail_Sans_Roman_Medium.woff') format('woff'), url($fonts + '/Mail_Sans_Roman_Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mail_Sans_Roman';
+  src: url($fonts + '/Mail_Sans_Roman_DemiBold.woff') format('woff'), url($fonts + '/Mail_Sans_Roman_DemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mail_Sans_Roman';
+  src: url($fonts + '/Mail_Sans_Roman_Bold.woff') format('woff'), url($fonts + '/Mail_Sans_Roman_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}

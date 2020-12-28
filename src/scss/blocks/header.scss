@@ -1,0 +1,46 @@
+.header {
+  @import '../main/variables';
+  @import '../main/variables.colors';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 25px;
+  z-index: 100;
+
+  @media (min-width: $desktop-l) {
+    padding-top: 34px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: $desktop) {
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 31px;
+    z-index: 101;
+    max-width: 198px;
+    background: url($img + '/logo.svg') no-repeat left;
+    background-size: contain;
+
+    @media (min-width: $mobile-s) {
+      position: static;
+      height: 34px;
+    }
+
+    @media (min-width: $desktop-l) {
+      height: 55px;
+      background-size: 100%;
+    }
+  }
+}

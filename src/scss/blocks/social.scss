@@ -1,0 +1,67 @@
+.social {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    font-size: 0;
+    line-height: 0;
+    margin-right: 14px;
+
+    @media (min-width: $desktop) {
+      margin-right: 10px;
+    }
+
+    @media (min-width: $desktop-l) {
+      margin-right: 12px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_title {
+      width: 100%;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
+      color: $color-light;
+      margin-bottom: 14px;
+      list-style: none;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+
+      @media (min-width: $desktop) {
+        display: block;
+        width: auto;
+        font-size: $font-size-11;
+        line-height: $line-height-15;
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $desktop-l) {
+        font-size: $font-size-15;
+        line-height: $line-height-20;
+        margin-right: 24px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 36px;
+
+    @media (min-width: $desktop) and (max-width: ($desktop-l - 1)) {
+      height: 26px;
+    }
+  }
+}

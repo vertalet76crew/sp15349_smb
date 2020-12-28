@@ -1,0 +1,44 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+body {
+  @import 'variables';
+  @import 'variables.fonts';
+  @import 'variables.colors';
+  font-family: 'Mail_Sans_Roman', sans-serif;
+  font-size: $font-size-15;
+  line-height: $line-height-24;
+  font-weight: 400;
+  color: $color-main;
+  background: $color-white;
+  text-size-adjust: 100%;
+
+  @media (min-width: $desktop-l) {
+    font-size: $font-size-20;
+    line-height: $line-height-32;
+  }
+}
+
+.wrap {
+  padding: 0 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 80px;
+  }
+  @media (min-width: $desktop-l) {
+    padding: 0 120px;
+  }
+}
