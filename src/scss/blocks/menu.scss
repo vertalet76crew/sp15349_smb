@@ -2,337 +2,375 @@
   @import '../main/variables';
   @import '../main/variables.fonts';
   @import '../main/variables.colors';
-
-  font-size: 0;
-  line-height: 0;
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
   @media (min-width: $desktop) {
-    margin-right: -20px;
-  }
-
-  &__door {
-    position: relative;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    background: url($img + "/menu.svg") no-repeat 50% 50%;
-    border: 0 none;
-    outline: none;
-    z-index: 101;
-
-    @media (min-width: $desktop) {
-      display: none;
-    }
-  }
-
-  &__frame {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: $color-dark;
-    z-index: 100;
-
-    @media (min-width: $desktop) {
-      display: block;
-      position: static;
-      background: none;
-    }
-  }
-
-  &_open {
-    .menu__frame {
-      @media (max-width: ($desktop - 1)) {
-        display: block;
-      }
-    }
-
-    .menu__door {
-      background-image: url($img + "/close.svg");
-    }
-  }
-
-  &__left-item {
     display: flex;
     align-items: center;
-    @media (min-width: $desktop-l) {
-      padding-right: 217px;
-    }
-    @media (min-width: $desktop) {
-      padding-right: 92px;
-    }
-  }
-
-  &__right-item {
-    display: flex;
-    align-items: center;
-  }
-
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    bottom: 110px;
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    @media (min-height: $mobile-height) {
-      top: 150px;
-    }
-
-    @media (min-width: $desktop) {
-      display: flex;
-      align-items: center;
-      position: static;
-      padding: 0;
-      overflow: visible;
-    }
-  }
-
-  &__link {
-    display: block;
-    color: currentColor;
-    text-decoration: none;
-    padding: 0 20px;
-    padding-bottom: 14px;
-
-    @media (min-width: $tablet) {
-      padding: 0 40px;
-    }
-
-    @media (min-width: $desktop) {
-      padding: 0;
-    }
-
-    &_ischild {
-      position: relative;
-      padding-right: 63px;
-
-      @media (min-width: $tablet) {
-        padding-right: 83px;
-      }
-
-      @media (min-width: $desktop) {
-        padding-right: 13px;
-      }
-
-      @media (min-width: $desktop-l) {
-        padding-right: 18px;
-      }
-    }
   }
 
   &__arrow {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 0;
+    fill: $color-white;
     transform: translateY(-50%);
-    fill: currentColor;
-    width: 24px;
-    height: 24px;
-
-    @media (min-width: $tablet) {
-      right: 40px;
-    }
 
     @media (min-width: $desktop) {
-      right: 0;
-      width: 12px;
-      height: 12px;
-    }
-
-    @media (min-width: $desktop-l) {
-      width: 16px;
-      height: 16px;
+      right: 25px;
+      fill: $color-menu-item;
     }
   }
 
-  &__level2 {
+  &__dropdown {
     display: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    // list-style-image: url('data:0');
-
 
     @media (min-width: $desktop) {
       position: absolute;
-      top: 28px;
+      top: 0;
       left: 0;
-      width: 230px;
-      background: $color-menu;
-      border-radius: 12px;
-
-      .menu__level2item {
-        &:hover {
-          color: $color-white;
-          background: rgba(14, 67, 255, 0.26);
-        }
-      }
-    }
-
-    @media (min-width: $desktop-l) {
-      top: 34px;
+      width: 100%;
+      padding-top: 126px;
+      padding-bottom: 30px;
+      background: $color-dark;
+      box-shadow: 0 16px 48px rgba(0, 16, 61, 0.48);
     }
   }
 
   &__item {
-    &_open {
-      @media (max-width: ($desktop - 1)) {
-        margin-bottom: 4px;
-      }
-
-      .menu__link {
-        @media (min-width: $desktop) {
-          color: $color-menu-link-active;
-        }
-      }
-
-      .menu__arrow {
-        transform: translateY(-50%) scale(1, -1);
-      }
-
-      .menu__level2 {
-        display: block;
-      }
-    }
-    position: relative;
     margin: 0;
     padding: 0;
-    font-size: $font-size-22;
-    line-height: $line-height-60;
-    font-weight: 500;
-    color: $color-white;
-    cursor: pointer;
-    list-style: none;
-
-    &:hover {
-      .menu__level2 {
-        display: block;
-        list-style: none;
-        list-style-image: none;
-        list-style-type: none;
-        overflow: hidden;
-      }
-
-      .menu__link {
-        color: $color-menu-link-active;
-      }
-
-      .menu__arrow {
-        transform: translateY(-50%) scale(1, -1);
-      }
-    }
-
-
-    @media (min-height: $mobile-height) {
-      margin: 0 0 10px;
-      line-height: $line-height-70;
-    }
+    margin-bottom: 48px;
 
     @media (min-width: $desktop) {
-      font-size: $font-size-13;
-      line-height: $line-height-17;
-      margin: 0 28px 0 0;
-      padding-bottom: 12px;
-      transform: translateY(6px);
+      margin-bottom: 0;
     }
 
     @media (min-width: $desktop-l) {
-      font-size: $font-size-18;
-      line-height: $line-height-23;
-      margin-right: 38px;
-    }
-
-    &:last-child {
-      margin-right: 0;
-
-      .menu__level2 {
-        left: auto;
-        right: 0;
-      }
+      margin-right: 24px;
     }
 
     @media (min-width: $desktop) and (hover: hover) and (pointer: fine) {
       &:hover {
-        .menu__link {
-          color: $color-menu-link-active;
+        .menu__door {
+          color: $color-white;
+          background: $color-menu-door-hover;
         }
 
         .menu__arrow {
+          fill: $color-white;
           transform: translateY(-50%) scale(1, -1);
         }
 
-        .menu__level2 {
+        .menu__dropdown {
           display: block;
         }
       }
     }
-  }
 
-  &__level2item {
-    padding: 0 20px 12px;
-    font-size: $font-size-16;
-    line-height: $line-height-22;
-    font-weight: 400;
-    color: $color-light;
+    &_open {
+      .menu__arrow {
+        fill: $color-white;
+        transform: translateY(-50%) scale(1, -1);
+      }
 
-    &:first-child {
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-    }
+      .menu__dropdown {
+        display: block;
+      }
 
-    &:last-child {
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-    }
-
-    @media (min-width: $tablet) {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-
-    @media (min-width: $desktop) {
-      padding: 13px 22px;
-      font-size: $font-size-15;
-      line-height: $line-height-20;
-      font-weight: 500;
-    }
-
-    @media (min-width: $desktop) and (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: $color-white;
-        background: rgba(14, 67, 255, 0.26);
+      @media (min-width: $desktop) {
+        .menu__door {
+          color: $color-white;
+          background: $color-menu-door-hover;
+        }
       }
     }
   }
 
-  &__level2link {
-    color: currentColor;
-    text-decoration: none;
+  &__door {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    font-size: $font-size-15;
+    line-height: $line-height-20;
+    color: $color-white;
+    padding-right: 20px;
+    cursor: pointer;
+
+    @media (min-width: $desktop) {
+      display: block;
+      color: $color-menu-item;
+      padding: 10px 40px 10px 20px;
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    @media (min-width: $desktop) and (max-width: ($desktop-l - 1)) {
+      font-size: $font-size-14;
+    }
   }
 
-  &__social {
-    position: absolute;
-    left: 20px;
-    bottom: 50px;
-
-    @media (min-width: $tablet) {
-      left: 40px;
+  &__dropdownwrap {
+    @media (max-width: ($desktop - 1)) {
+      padding: 0;
+      max-width: inherit;
     }
 
     @media (min-width: $desktop) {
-      display: none;
+      position: relative;
+    }
+  }
+
+  &-level3 {
+    display: none;
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      bottom: 0;
+      padding-left: 70px;
+      width: 280px;
+      margin: 0;
     }
 
-    .social__item_title {
-      display: none;
+    &__item {
+      margin: 0 0 12px;
+
+      @media (min-width: $desktop) {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__block {
+      position: relative;
+      display: block;
+      font-size: $font-size-13;
+      line-height: $line-height-18;
+      color: $color-menu-item;
+      text-decoration: none;
+      padding: 8px 0 8px 60px;
+      border-radius: 8px;
+
+      @media (min-width: $desktop) {
+        font-size: $font-size-15;
+        line-height: $line-height-20;
+        padding: 8px 0 8px 44px;
+        min-height: 36px;
+      }
+
+      &_active {
+        @media (max-width: ($desktop - 1)) {
+          background-color: $color-menu-door-hover;
+        }
+      }
+    }
+
+    &__itemname {
+      display: block;
+      font-weight: 500;
+      color: $color-white;
+    }
+
+    &__itemicon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      width: auto;
+      height: 36px;
+      transform: translateY(-50%);
+
+      @media (min-width: $desktop) {
+        left: 0;
+      }
+    }
+  }
+
+  &-level2 {
+    position: relative;
+    margin: 29px 0 38px -12px;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $desktop) {
+      margin-left: -16px;
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 280px;
+    }
+
+    &__arrow {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      fill: currentColor;
+
+      @media (min-width: $desktop) {
+        display: none;
+      }
+    }
+
+    &__item {
+      @media (min-width: $desktop) and (hover: hover) and (pointer: fine) {
+        &:hover {
+          .menu-level2__block {
+            background: $color-menu-door-hover;
+          }
+
+          .menu-level2__itemname {
+            color: $color-white;
+          }
+
+          .menu-level3 {
+            display: block;
+          }
+        }
+      }
+
+      @media (min-width: $desktop) {
+        margin-bottom: 24px;
+      }
+
+      &_open {
+        .menu-level2__arrow {
+          transform: translateY(-50%) scale(1, -1);
+        }
+
+        .menu-level3 {
+          display: block;
+        }
+
+        @media (min-width: $desktop) {
+          .menu-level2__block {
+            background: $color-menu-door-hover;
+          }
+
+          .menu-level2__itemname {
+            color: $color-white;
+          }
+        }
+      }
+    }
+
+    &_column2 {
+      @media (min-width: $desktop) {
+        width: 630px;
+        column-count: 2;
+        column-gap: 70px;
+      }
+
+      .menu-level2__item {
+        @media (min-width: $desktop) {
+          page-break-inside: avoid;
+          break-inside: avoid;
+        }
+      }
+    }
+
+    &__itemname {
+      position: relative;
+      display: inline-block;
+      padding-right: 20px;
+      font-weight: 500;
+      color: $color-menu-item;
+
+      @media (min-width: $desktop) {
+        display: block;
+        padding-right: 0;
+      }
+    }
+
+    &__block {
+      display: block;
+      padding: 19px 12px;
+      font-size: $font-size-13;
+      line-height: $line-height-18;
+      color: $color-menu-item;
+      text-decoration: none;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 8px;
+
+      @media (min-width: $desktop) {
+        padding: 8px 16px;
+        min-height: 56px;
+        font-size: $font-size-15;
+        line-height: $line-height-20;
+      }
+
+      &_active {
+        @media (max-width: ($desktop - 1)) {
+          background-color: $color-menu-door-hover;
+        }
+
+        .menu-level2__itemname {
+          @media (max-width: ($desktop - 1)) {
+            color: $color-white;
+          }
+        }
+      }
+
+      &_onlyname {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &__itemdescr {
+      @media (max-width: ($desktop - 1)) {
+        display: none;
+      }
+    }
+
+    a.menu-level2__block {
+      .menu-level2__itemname {
+        @media (min-width: $desktop) {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  &-extra {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-left: 32px;
+      list-style: none;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    &__item {
+      padding: 0;
+      margin-bottom: 48px;
+
+      @media (min-width: $desktop) {
+        margin-bottom: 32px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
+      font-weight: 500;
+      color: $color-white;
+      text-decoration: none;
     }
   }
 }

@@ -1,12 +1,33 @@
+/** menu.js **/
 import $ from 'jquery';
 
 function menu(isMobile) {
+    const $nav = $('[data-block="nav"]');
     const $menu = $('[data-block="menu"]');
     const $body = $('body');
     const $html = $('html');
+    let baseClassesList = [];
 
-    $menu.on('click', '[data-target="toggle"]', function(e) {
-        $menu.toggleClass('menu_open');
+    function closeMenu() {
+        $nav.removeClass('nav_open');
+
+        if (baseClassesList.length) {
+            baseClassesList.forEach(element => {
+                $menu.find('.'+ element +'_open')
+                    .removeClass(element + '_open');
+            });
+            baseClassesList = [];
+        }
+
+        if (isMobile) {
+            $html.removeClass('overflow-hidden');
+        } else {
+            $body.removeClass('overflow-hidden');
+        }
+    }
+
+    $body.on('click', '[data-target="menu"]', function(e) {
+        $nav.toggleClass('nav_open');
 
         if (isMobile) {
             $html.toggleClass('overflow-hidden');
@@ -17,21 +38,35 @@ function menu(isMobile) {
         e.preventDefault();
     });
 
-    $('body').on('click', function(e) {
-        const $item = $(e.target).parent();
+    $(document).on('click', function(e) {
+        console.log($(e.target).closest('.header').length);
 
-        if ($item.closest('.menu__item').length) {
-            $item.toggleClass('menu__item_open');
-            $item.siblings().removeClass('menu__item_open');
-        } else {
-            $('[data-target="child"]').parent().removeClass('menu__item_open');
+        if (!window.matchMedia('(hover: hover)').matches) {
+            if (!$(e.target).closest('.header').length) {
+                closeMenu();
+            }
         }
+        e.stopPropagation();
     });
 
-    function closeMenu() {
-        $menu.removeClass('menu_open');
-        $menu.find('.menu__item_open').removeClass('menu__item_open');
-    }
+    $menu.on('click', '[data-target="child"]', function(e) {
+        const $item = $(this).parent();
+        const baseClass = $item[0].dataset.baseClass;
+
+        if (window.matchMedia('(max-width: 1019px)').matches ||
+            !window.matchMedia('(hover: hover)').matches) {
+            if (baseClass) {
+                $item.toggleClass(baseClass + '_open')
+                    .siblings()
+                    .removeClass(baseClass + '_open');
+
+                if (!baseClassesList.find((i) => i === baseClass)) {
+                    baseClassesList.push(baseClass);
+                }
+            }
+        }
+        e.preventDefault();
+    });
 
     if (isMobile) {
         window.addEventListener('orientationchange', closeMenu, false);

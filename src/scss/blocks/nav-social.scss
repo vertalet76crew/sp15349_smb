@@ -1,0 +1,13 @@
+.nav-social {
+  @import '../main/variables';
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+
+  .social {
+    .social__item_title {
+      display: none;
+    }
+  }
+}

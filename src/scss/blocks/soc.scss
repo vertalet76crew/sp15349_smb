@@ -1,0 +1,49 @@
+.soc {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    font-size: 0;
+    line-height: 0;
+    margin-right: 14px;
+
+    @media (min-width: $desktop) {
+      margin-right: 12px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_title {
+      width: 100%;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
+      color: $color-light;
+      margin-bottom: 16px;
+
+      @media (min-width: $tablet) {
+        display: none;
+      }
+
+      @media (min-width: $desktop) {
+        display: block;
+        width: auto;
+        margin-right: 24px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 32px;
+  }
+}

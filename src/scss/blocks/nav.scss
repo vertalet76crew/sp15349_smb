@@ -1,0 +1,126 @@
+.nav {
+  @import '../main/variables';
+  @import '../main/variables.fonts';
+  @import '../main/variables.colors';
+  @media (min-width: $desktop) {
+    width: calc(100% - 180px);
+  }
+
+  @media (min-width: $desktop-l) {
+    width: calc(100% - 270px);
+  }
+
+  &__door {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 0 none;
+    outline: none;
+    background: url($img + "/burger.svg") no-repeat 50% 50%;
+    cursor: pointer;
+    margin-right: 24px;
+    z-index: 1;
+
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__frame {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-dark;
+
+    @media (min-width: $desktop) {
+      display: block;
+      position: static;
+      background: none;
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    top: 104px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 20px 40px;
+    max-width: 688px;
+    margin: 0 auto;
+    overflow: auto;
+
+    @media (min-width: $mobile) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (min-width: $desktop) {
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: inherit;
+      padding: 0;
+    }
+  }
+
+  &__auth {
+    @media (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__authitem {
+    margin-bottom: 48px;
+
+    @media (min-width: $desktop) {
+      margin-left: 24px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__authlogin {
+    font-weight: 500;
+    font-size: $font-size-15;
+    line-height: $line-height-20;
+    color: $color-white;
+    text-decoration: none;
+
+    @media (min-width: $desktop) {
+      color: $color-menu-item;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__authcreate {
+    @media (min-width: $desktop-l) {
+      font-size: $font-size-15;
+      margin-left: 32px;
+    }
+  }
+
+  &_open {
+    .nav__door {
+      background-image: url($img + "/close.svg");
+    }
+
+    .nav__frame {
+      @media (max-width: ($desktop - 1)) {
+        display: block;
+      }
+    }
+  }
+}

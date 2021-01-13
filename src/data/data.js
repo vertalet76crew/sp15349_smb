@@ -7,7 +7,7 @@ module.exports = {
     keywords: '',
     ogtitle: `Коммуникационные сервисы для малого 
   и среднего бизнеса | Mail.ru для бизнеса`,
-    ogurl: 'http://biz.mail.ru/onpremise/smb',
+    ogurl: 'biz.mail.ru/onpremise/small-business',
     ogdescr: `Корпоративная Почта, Мессенджер и 
   Файловое хранилище - эффективные и надежные 
   коммуникации для малого и среднего бизнеса`
