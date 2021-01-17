@@ -40,23 +40,19 @@
     }
 
     @media (min-width: $mobile-m) {
-      flex-direction: column;
       margin-left: 0;
       margin-right: 0;
     }
 
     @media (min-width: $tablet) {
-      display: flex;
+      display: block;
       margin-top: 32px;
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
-      flex-direction: row;
-      align-items: center;
     }
 
     @media (min-width: $desktop) {
-      display: block;
       margin-top: 0;
     }
 
@@ -79,13 +75,13 @@
         font-size: $font-size-44;
         line-height: $line-height-50;
         font-family: 'Mail_Sans_Roman', sans-serif;
-        margin: 0 0 42px;
+        margin: 0 0 16px;
       }
 
       @media (min-width: $desktop-l) {
         font-size: $font-size-52;
         line-height: $line-height-60;
-        margin: 0 0 16px;
+
         font-family: 'Mail_Sans_Roman', sans-serif;
       }
 
@@ -111,22 +107,24 @@
       font-weight: 500;
 
       @media (min-width: $tablet) {
-        margin: 0 16px 0 0;
+        margin: 0 0 32px;
         font-size: $font-size-26;
         line-height: $line-height-32;
       }
 
       @media (min-width: $desktop) {
-        max-width: 260px;
-        margin-bottom: 24px;
+        max-width: 200px;
+        margin-bottom: 32px;
         font-size: $font-size-14;
         line-height: $line-height-22;
         font-family: 'Mail_Sans_Roman', sans-serif;
         font-weight: 400;
       }
-      @media (min-width: $desktop) {
+      @media (min-width: $desktop-l) {
+        max-width: 260px;
         font-size: $font-size-17;
         line-height: $line-height-28;
+        margin-bottom: 36px;
       }
     }
 
@@ -137,6 +135,16 @@
       @media (min-width: $desktop-l) {
         max-width: 210px;
       }
+    }
+  }
+
+  .faq_button {
+    max-width: 100%;
+    @media (min-width: $tablet) {
+      max-width: 163px;
+    }
+    @media (min-width: $desktop-l) {
+      max-width: 210px;
     }
   }
 
@@ -223,14 +231,10 @@
         font-size: $font-size-14;
         line-height: $line-height-22;
       }
+
       @media (min-width: $desktop-l) {
         font-size: $font-size-17;
         line-height: $line-height-28;
-      }
-
-      @media (min-width: $desktop) {
-        font-size: $font-size-20;
-        line-height: $line-height-32;
       }
 
       &_active {

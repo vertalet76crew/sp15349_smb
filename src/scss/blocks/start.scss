@@ -128,9 +128,16 @@
   }
 
   &__buttonlink {
-    @media (max-width: ($desktop - 1)) {
-      width: 100%;
-      max-width: 360px;
+    width: 100%;
+    @media (min-width: $tablet) {
+      max-width: 163px;
+      margin: 0 auto;
+    }
+    @media (min-width: $desktop) {
+      margin: 0;
+    }
+    @media (min-width: $desktop-l) {
+      max-width: 210px;
     }
   }
 }

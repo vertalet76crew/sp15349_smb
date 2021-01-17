@@ -106,6 +106,7 @@
   }
 
   &__authcreate {
+    height: 52px;
     @media (min-width: $desktop-l) {
       font-size: $font-size-15;
       margin-left: 32px;
