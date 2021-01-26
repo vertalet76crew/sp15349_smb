@@ -12,9 +12,29 @@ function formRequest(isMobile) {
     const classError = 'form__field_error';
     const classHideForm = 'popup__form_hide';
     const classSendForm = 'popup__send_active';
-    const im = new Inputmask('+7(999) 999-99-99');
+    const $registrationInput = $('.form__field');
+    const im = new Inputmask('+7(999) 999-99-99', {
+        placeholder: 'X'
+    });
 
-    im.mask(document.querySelector('[name="phone"]'));
+    const telMask = document.querySelectorAll('[name="phone"]')[0];
+
+    function focusHandler(selector) {
+        im.mask(selector);
+    }
+
+    function blurHandler(selector) {
+        if (selector) {
+            selector.inputmask.remove();
+        }
+    }
+
+    telMask.addEventListener('focus', function() {
+        focusHandler(telMask);
+    });
+    telMask.addEventListener('blur', function() {
+        blurHandler(telMask);
+    });
 
     $body.on('click', '[data-target="formRequest"]', function(e) {
         $popup.addClass(classPopupOpen);
@@ -47,20 +67,23 @@ function formRequest(isMobile) {
         const $fieldRequired = $form.find('[data-required]');
         const pattern = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
         let isError = false;
+        const $errors = $('[data-errors]');
 
-        $fieldRequired.each(function() {
+        $fieldRequired.each(function(i, el) {
             const $field = $(this);
             const value = $field.val().trim();
-            const $error = $field.siblings('[data-error]');
+            const $error = $($errors.children('[data-error]')[i]);
 
             if (!value) {
                 isError = true;
-                $error.text('Заполните поле');
+                $error.text(`Укажите ${el.dataset.name}`);
                 $error[0].hidden = false;
+                $(el).addClass(classError);
             } else if ($field.is('[name="email"]') && !pattern.test(value)) {
                 isError = true;
-                $error.text('Вы ввели неверный Email');
+                $error.text('Укажите корректный адрес почты');
                 $error[0].hidden = false;
+                $(el).addClass(classError);
             }
         });
 
@@ -76,16 +99,35 @@ function formRequest(isMobile) {
 
         e.preventDefault();
     });
+    const $fieldRequired = $('[data-required]');
+    const $errors = $('[data-errors]');
 
-    $formRequest.on('focus', 'input', function(e) {
-        const $field = $(this);
-        const $error = $field.siblings('[data-error]');
-
-        $field.removeClass(classError);
+    function hideErrorHandler(e, i, el) {
+        const $error = $($errors.children('[data-error]')[i]);
+        $(el).removeClass(classError);
         $error.empty();
         $error[0].hidden = true;
-
         e.preventDefault();
+    }
+
+    $fieldRequired.each(function(i, el) {
+        $(el).on('focus', (e) => {
+            hideErrorHandler(e, i, el);
+        });
+    });
+
+    $registrationInput.each(function(index, element) {
+        $(element).on('focus', function() {
+            const plholder = $(element).siblings('.form__placeholder');
+            plholder.addClass('form__placeholder_active');
+        });
+        $(element).on('blur', function() {
+            const plholder = $(element).siblings('.form__placeholder');
+
+            if ($(element).val() === '') {
+                plholder.removeClass('form__placeholder_active');
+            }
+        });
     });
 }
 

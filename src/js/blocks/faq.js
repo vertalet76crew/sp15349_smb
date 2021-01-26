@@ -12,6 +12,7 @@ function faq() {
             const $btn = faqRightItem.find('[data-click="btn"]');
             $answer.toggleClass('faq__right-answer_active');
             $btn.toggleClass('faq__open-close_active');
+            $btn.parent().toggleClass('faq__open-close-wrap_active');
         }
         return false;
     });

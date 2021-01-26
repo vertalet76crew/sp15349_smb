@@ -8,21 +8,22 @@
 
   &__row {
     margin-bottom: 20px;
+    position: relative;
   }
 
   &__field {
     width: 100%;
     font-family: 'Mail_Sans_Roman', sans-serif;
-    font-size: $font-size-16;
-    line-height: normal;
-    padding: 15px 14px;
-    color: $color-filed;
+    font-size: 15px;
+    line-height: $line-height-20;
+    padding: 20px 20px 6px;
+    color: #303132;
     outline: none;
-    border: 1px solid $color-gray;
-    background: $color-gray;
+    border: 1px solid rgba(0, 16, 61, 0.12);
     border-radius: 10px;
     box-sizing: border-box;
     appearance: none;
+    font-weight: 400;
 
     @include placeholder($color-placeholder);
 
@@ -31,7 +32,25 @@
     }
 
     &_error {
-      border-color: $color-filed-border-error;
+      border-color: $color-error2;
+    }
+  }
+
+  &__placeholder {
+    font-size: $font-size-16;
+    position: absolute;
+    color: $color-placeholder;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    transition: all ease 0.2s;
+    pointer-events: none;
+
+    &_active {
+      top: 9px;
+      transform: none;
+      font-size: 11px;
+      line-height: 1;
     }
   }
 
@@ -41,10 +60,13 @@
   }
 
   &__error {
-    padding-top: 10px;
-    margin-bottom: -6px;
+    margin-bottom: 4px;
     font-size: $font-size-14;
     line-height: $line-height-20;
-    color: $color-error;
+    color: $color-error2;
+
+    &:last-child {
+      margin-bottom: 12px;
+    }
   }
 }

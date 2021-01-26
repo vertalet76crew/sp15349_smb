@@ -43,6 +43,9 @@
       @media (min-width: $tablet) {
         padding-left: 40px;
       }
+      @media (min-width: $desktop) {
+        padding-left: 64px;
+      }
 
       @media (min-width: $desktop-l) {
         padding-left: 60px;
@@ -91,24 +94,22 @@
 
   &__title {
     display: block;
-    font-size: $font-size-20;
-    line-height: $line-height-26;
-    font-weight: 700;
+    font-size: $font-size-15;
+    line-height: $line-height-20;
     color: $color-black;
     height: 82px;
     overflow: hidden;
     margin-bottom: 23px;
+    font-weight: 500;
 
     @media (min-width: $tablet) {
-      font-size: $font-size-17;
-      line-height: $line-height-21;
       height: 63px;
       margin-bottom: 15px;
     }
 
     @media (min-width: $desktop-l) {
-      font-size: $font-size-22;
-      line-height: $line-height-28;
+      font-size: $font-size-20;
+      line-height: $line-height-26;
       height: 84px;
       margin-bottom: 20px;
     }

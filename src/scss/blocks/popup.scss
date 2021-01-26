@@ -30,37 +30,36 @@
   }
 
   &__content {
-    max-width: 480px;
+    max-width: 420px;
     margin: 0 auto;
-    padding: 38px 20px;
+    padding: 28px 24px 24px;
     background: $color-white;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
     border-radius: 24px;
+    box-sizing: border-box;
+    position: relative;
+  }
 
-    @media (min-width: $tablet) {
-      position: relative;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
+  &__title {
+    font-size: $font-size-20;
+    line-height: $line-height-30;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 22px;
   }
 
   &__close {
     position: absolute;
-    top: 9px;
-    right: 9px;
-    width: 40px;
-    height: 40px;
+    top: 34px;
+    right: 34px;
+    width: 16px;
+    height: 16px;
     font-size: 0;
     line-height: 0;
-    background: url($img + '/close.svg') no-repeat 50% 50%;
+    background: url($img + "/close-black.svg") no-repeat 50% 50%;
     border: 0 none;
     outline: none;
     cursor: pointer;
-
-    @media (min-width: $tablet) {
-      top: -31px;
-      right: -39px;
-    }
   }
 
   &__form {
@@ -79,7 +78,7 @@
     text-align: center;
     padding-top: 74px;
     transform: translateX(-50%) translateY(-50%);
-    background: url($img + '/ic-check.svg') no-repeat 50% 0;
+    background: url($img + "/ic-check.svg") no-repeat 50% 0;
 
     &_active {
       display: block;

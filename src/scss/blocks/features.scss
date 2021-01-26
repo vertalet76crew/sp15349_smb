@@ -3,32 +3,25 @@
   @import '../main/variables.fonts';
   @import '../main/variables.colors';
 
-  padding-top: 54px;
-  padding-bottom: 11px;
-
-  @media (min-width: $desktop) {
-    padding-top: 60px;
-    padding-bottom: 90px;
-  }
-
-  @media (min-width: $desktop-l) {
-    padding-top: 84px;
-    padding-bottom: 112px;
-  }
-
   &__wrap {
+    padding-top: 32px;
     @media (min-width: $tablet) {
       display: flex;
       flex-wrap: wrap;
-      padding: 0 82px 64px;
+      padding: 56px 82px 64px;
       margin: 0 auto;
       max-width: $tablet;
     }
 
     @media (min-width: $desktop) {
       display: block;
-      max-width: 1080px;
-      box-sizing: content-box;
+      box-sizing: border-box;
+      padding: 56px 106px 64px;
+      max-width: $desktop;
+    }
+    @media (min-width: $desktop-l) {
+      padding: 64px 140px 82px;
+      max-width: $desktop-l;
     }
   }
 
@@ -39,11 +32,14 @@
     @media (min-width: $desktop) {
       display: flex;
       justify-content: flex-start;
-      padding-bottom: 80px;
+      padding-bottom: 42px;
 
       &:last-child {
         padding-bottom: 0;
       }
+    }
+    @media (min-width: $desktop-l) {
+      padding-bottom: 50px;
     }
   }
 
@@ -52,7 +48,7 @@
     text-align: center;
     margin: 0 auto 62px;
 
-    @media (min-width: $tablet) {
+    @media (min-width: $tablet) and (max-width: $desktop - 1) {
       margin: 0;
       margin-bottom: 32px;
       text-align: left;
@@ -78,6 +74,10 @@
       &:first-child {
         margin-right: 46;
       }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     @media (min-width: $desktop-l) {
@@ -97,7 +97,7 @@
 
   &__name {
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     font-size: $font-size-20;
     line-height: $line-height-26;
     font-weight: 500;
@@ -112,17 +112,11 @@
     @media (min-width: $tablet) {
       font-size: $font-size-17;
       line-height: $line-height-24;
-      margin-bottom: 10px;
     }
 
     @media (min-width: $desktop) {
       font-size: $font-size-20;
       line-height: $line-height-26;
-      margin-bottom: 14px;
-    }
-
-    @media (min-width: $desktop-l) {
-      margin-bottom: 18px;
     }
   }
 
@@ -232,46 +226,32 @@
     }
 
     &_7 {
-      background-image: url($img + "/icon-7.svg");
+      background-image: url($img + "/icon-6.svg");
 
       @media (min-width: $tablet) {
-        background-image: url($img + "/icon-7.svg");
+        background-image: url($img + "/icon-6.svg");
       }
       @media (min-width: $desktop) {
-        transform: translateX(-9px);
+        transform: translateX(-7px);
       }
       @media (min-width: $desktop-l) {
-        transform: translateX(-12px);
+        transform: translateX(-9px);
       }
     }
 
     &_8 {
-      background-image: url($img + "/icon-8.svg");
+      background-image: url($img + "/icon-6.svg");
 
       @media (min-width: $tablet) {
-        background-image: url($img + "/icon-8.svg");
+        background-image: url($img + "/icon-6.svg");
       }
       @media (min-width: $desktop) {
-        transform: translateX(-8px);
+        transform: translateX(-7px);
       }
       @media (min-width: $desktop-l) {
-        transform: translateX(-11px);
+        transform: translateX(-9px);
       }
     }
-
-    // &_9 {
-    //   background-image: url($img + "/icon-9.svg");
-
-    //   @media (min-width: $tablet) {
-    //     background-image: url($img + "/icon-9.svg");
-    //   }
-    //   @media (min-width: $desktop) {
-    //     transform: translateX(-7px);
-    //   }
-    //   @media (min-width: $desktop-l) {
-    //     transform: translateX(-9px);
-    //   }
-    // }
   }
 
   &__img {
@@ -291,6 +271,12 @@
     @media (min-width: $desktop-l) {
       font-size: $font-size-17;
       line-height: $line-height-28;
+    }
+
+    &_fat {
+      @media (min-width: $desktop) and (max-width: $desktop-l - 1) {
+        width: 243px;
+      }
     }
   }
 }

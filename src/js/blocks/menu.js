@@ -12,9 +12,8 @@ function menu(isMobile) {
         $nav.removeClass('nav_open');
 
         if (baseClassesList.length) {
-            baseClassesList.forEach(element => {
-                $menu.find('.'+ element +'_open')
-                    .removeClass(element + '_open');
+            baseClassesList.forEach((element) => {
+                $menu.find(`.${element}_open`).removeClass(`${element}_open`);
             });
             baseClassesList = [];
         }
@@ -39,8 +38,6 @@ function menu(isMobile) {
     });
 
     $(document).on('click', function(e) {
-        console.log($(e.target).closest('.header').length);
-
         if (!window.matchMedia('(hover: hover)').matches) {
             if (!$(e.target).closest('.header').length) {
                 closeMenu();
@@ -53,12 +50,15 @@ function menu(isMobile) {
         const $item = $(this).parent();
         const baseClass = $item[0].dataset.baseClass;
 
-        if (window.matchMedia('(max-width: 1019px)').matches ||
-            !window.matchMedia('(hover: hover)').matches) {
+        if (
+            window.matchMedia('(max-width: 1019px)').matches ||
+      !window.matchMedia('(hover: hover)').matches
+        ) {
             if (baseClass) {
-                $item.toggleClass(baseClass + '_open')
-                    .siblings()
-                    .removeClass(baseClass + '_open');
+                $item
+          .toggleClass(baseClass + '_open')
+          .siblings()
+          .removeClass(baseClass + '_open');
 
                 if (!baseClassesList.find((i) => i === baseClass)) {
                     baseClassesList.push(baseClass);
