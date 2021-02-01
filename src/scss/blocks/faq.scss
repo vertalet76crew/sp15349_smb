@@ -7,11 +7,12 @@
 
   &_wrap {
     padding: 60px 10px;
-    padding-top: 64px;
+    padding-top: 82px;
 
     @media (min-width: $tablet) {
       padding: 72px 40px;
       max-width: $tablet;
+      padding-top: 64px;
     }
 
     @media (min-width: $desktop) {
@@ -131,8 +132,9 @@
 
     .button_type2 {
       width: 100%;
-      max-width: 300px;
+
       @media (min-width: $mobile) {
+        max-width: 300px;
         margin: 0 28px 0 27px;
       }
       @media (min-width: $tablet) {
@@ -142,16 +144,6 @@
       @media (min-width: $desktop-l) {
         max-width: 210px;
       }
-    }
-  }
-
-  .faq_button {
-    max-width: 100%;
-    @media (min-width: $tablet) {
-      max-width: 163px;
-    }
-    @media (min-width: $desktop-l) {
-      max-width: 210px;
     }
   }
 

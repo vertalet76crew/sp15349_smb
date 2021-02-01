@@ -117,18 +117,17 @@
 
   &__date {
     display: block;
-    font-size: $font-size-13;
-    line-height: $line-height-17;
+    font-size: $font-size-15;
+    line-height: $line-height-20;
     color: $color-date;
 
-    @media (min-width: $tablet) {
-      font-size: $font-size-11;
-      line-height: $line-height-13;
+    @media (min-width: $desktop) {
+      font-size: $font-size-13;
+      line-height: $line-height-20;
     }
-
     @media (min-width: $desktop-l) {
-      font-size: $font-size-14;
-      line-height: $line-height-17;
+      font-size: $font-size-15;
+      line-height: $line-height-20;
     }
   }
 

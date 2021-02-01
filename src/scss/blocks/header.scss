@@ -38,8 +38,8 @@
     height: 30px;
     z-index: 1;
 
-    @media (min-width: $desktop) {
-      height: 36px;
+    @media (min-width: $desktop-l) {
+      height: 40px;
     }
   }
 }
