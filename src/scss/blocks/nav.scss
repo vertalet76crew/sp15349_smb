@@ -2,9 +2,6 @@
   @import '../main/variables';
   @import '../main/variables.fonts';
   @import '../main/variables.colors';
-  @media (min-width: $desktop) {
-    width: calc(100% - 180px);
-  }
 
   @media (min-width: $desktop-l) {
     width: calc(100% - 270px);
